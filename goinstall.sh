@@ -1,4 +1,5 @@
 #!/bin/bash
+### Code from https://github.com/ralfyang/golang-tools-install-script. Powered by Github.
 set -e
 
 #VERSION="1.10.4"
