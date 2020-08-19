@@ -3,7 +3,7 @@
 set -e
 
 #VERSION="1.10.4"
-VERSION="$(curl -sL https://golang.org/dl |grep -e 'go1.' | head -1 | sed 's/<[^*]*.go1./go1./g' |awk -F '.' '{print $1"."$2"."$3 }')"
+VERSION="$(curl -sL https://golang.org/dl |grep -e 'go1.' | head -1 | sed -e 's/<[^*]*.go1./go1./g' -e 's/^go[1-9.]*/&-=-=/g' | awk -F '.-=-=' '{print $1}')"
 
 OS_TYPE="$(uname -s)-$(uname -m)"
 
